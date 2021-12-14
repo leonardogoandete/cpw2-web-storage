@@ -22,11 +22,12 @@
 
         * As opções do HTML select devem ser: Arial, Monaco e Bradley Hand
     -->
-    <select name="select" id="font">
-      <option value="valor1">Arial</option>
-      <option value="valor2" selected>Monaco</option>
-      <option value="valor3">Bradley Hand</option>
+    <select name="select" id="font" onclick="changeFont()">
+      <option value="Arial">Arial</option>
+      <option value="Monaco">Monaco</option>
+      <option value="Bradley Hand">Bradley Hand</option>
     </select>
+
 
     <script>
       /**
@@ -43,6 +44,11 @@
        * Troca a fonte do elemento onde o id é "text"
        */
       function changeFont() {
+        let inputTextFonte = document.getElementById('font').value;
+        localStorage.setItem("FonteTexto", inputTextFonte);
+        //document.getElementById('text').style.fontFamily = inputTextFonte; // realiza a troca da fonte
+        //console.log(inputTextFonte); // ver o nome da fonte no console
+
         /**
          * 2 - Implemente o corpo do método `changeFont`. Este método deve ser capaz
          * de trocar a fonte do texto `Web Storage` e também salvar o valor
@@ -60,6 +66,10 @@
          * 3 - Altere o método `load` para recuperar o nome da fonte do *localStorage* e
          * estilizar o texto `Web Storage`
          */
+         recuperaNomeFonte = localStorage.getItem('FonteTexto');
+         document.getElementById('text').style.fontFamily = recuperaNomeFonte; // realiza a troca da fonte
+         console.log(" ===== Valor de recuperaNomeFonte: ",recuperaNomeFonte);
+        
       }
     </script>
   </body>

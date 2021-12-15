@@ -45,6 +45,7 @@
        */
       function changeFont() {
         let inputTextFonte = document.getElementById('font').value;
+        console.log(inputTextFonte);
         localStorage.setItem("FonteTexto", inputTextFonte);
         //document.getElementById('text').style.fontFamily = inputTextFonte; // realiza a troca da fonte
         //console.log(inputTextFonte); // ver o nome da fonte no console
@@ -68,7 +69,7 @@
          */
          recuperaNomeFonte = localStorage.getItem('FonteTexto');
          document.getElementById('text').style.fontFamily = recuperaNomeFonte; // realiza a troca da fonte
-         console.log(" ===== Valor de recuperaNomeFonte: ",recuperaNomeFonte);
+         //console.log(" ===== Valor de recuperaNomeFonte: ",recuperaNomeFonte);
         
       }
     </script>
